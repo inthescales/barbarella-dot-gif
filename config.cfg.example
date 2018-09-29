@@ -3,35 +3,12 @@ ffmpeg_path: ffmpeg | avconv | none if using vlc
 vlc_path: /path/to/vlc
 videos: [
     {
-        'title': "A New Hope",
+        'title': "Barbarella",
         'movie_path': "/path/to/movie-file",
-        'subtitle_path': "subs/Star_Wars_Episode_IV.srt",
-        'slug': 'hope',
-    },
-    {
-        'title': "The Empire Strikes Back",
-        'movie_path': "/path/to/movie-file",
-        'subtitle_path': "subs/Star_Wars_Episode_V.srt",
-        'slug': 'empire',
-    },
-    {
-        'title': "The Return of the Jedi",
-        'movie_path': "/path/to/movie-file",
-        'subtitle_path': "subs/Star_Wars_Episode_VI.srt",
-        'slug': 'return',
-    },
-    {
-        'title': "The Force Awakes",
-        'movie_path': "/path/to/movie-file",
-        'subtitle_path': "subs/Star_Wars_Episode_VII.srt",
-        'slug': 'awakens',
-    },
-    {
-        'title': "The Last Jedi",
-        'movie_path': "/path/to/movie-file",
-        'subtitle_path': "subs/Star_Wars_Episode_VIII.srt",
-        'slug': 'last',
-    },]
+        'subtitle_path': "subs/barbarella.srt",
+        'slug': 'barbarella',
+    }
+]
 
 [imgur]
 client_id: imgur_client_id
