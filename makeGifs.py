@@ -119,7 +119,7 @@ def drawText(draw, x, y, text, font):
 
 
 def makeGif(movie_slug, sub_index=[-1], custom_subtitle=[""], quote=True,
-            frames=0, filename="star_wars.gif", dither=DITHER,
+            frames=0, filename="barbarella.gif", dither=DITHER,
             padding=PADDING, palletsize=PALLETSIZE, width=WIDTH, height=HEIGHT,
             frame_duration=FRAME_DURATION, font_path=FONT_PATH,
             font_size=FONT_SIZE):
@@ -146,7 +146,7 @@ def makeGif(movie_slug, sub_index=[-1], custom_subtitle=[""], quote=True,
                         (default: {True})
         frames {int} -- Only export <frames> images to the gif (default: {0})
         filename {str} -- Name to safe the gif under
-                          (default: {"star_wars.gif"})
+                          (default: {"barbarella.gif"})
         dither {int} -- Every <dither> image is used in the gif (2 means every
                         second exported image is used) (default: {2})
         padding {[int]} -- Seconds to add at the end and beginning of the gif
@@ -426,8 +426,8 @@ if __name__ == '__main__':
     parser.set_defaults(quote=True)
 
     parser.add_argument(
-        '--filename', type=str, nargs='?', default="star_wars.gif",
-        help='filename for the GIF (default: star_wars.gif)')
+        '--filename', type=str, nargs='?', default="barbarella.gif",
+        help='filename for the GIF (default: barbarella.gif)')
 
     parser.add_argument(
         '--palletsize', type=int, nargs='?', default=PALLETSIZE,

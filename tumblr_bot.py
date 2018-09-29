@@ -32,18 +32,18 @@ while True:
 
     # reduce amount of colors, because tumblr sucks
     subprocess.call(['convert',
-                     'star_wars.gif',
+                     'barbarella.gif',
                      '-layers',
                      'optimize',
                      '-colors',
                      '64',
                      '-loop',
                      '0',
-                     'star_wars.gif'])
+                     'barbarella.gif'])
 
-    while(os.path.getsize('star_wars.gif') > 1048576):
+    while(os.path.getsize('barbarella.gif') > 1048576):
         subprocess.call(['convert',
-                         'star_wars.gif',
+                         'barbarella.gif',
                          '-resize',
                          '90%',
                          '-coalesce',
@@ -51,18 +51,18 @@ while True:
                          'optimize',
                          '-loop',
                          '0',
-                         'star_wars.gif'])
+                         'barbarella.gif'])
 
-    photo = open('star_wars.gif', 'rb')
+    photo = open('barbarella.gif', 'rb')
 
     post = t.post(
         'post',
-        blog_url='http://starwarsgifsasaservice.tumblr.com',
+        #blog_url='http://barbarellagifs.tumblr.com',
         params={
             'type': 'photo',
             'caption': quote,
             'data': photo,
-            'tags': 'star wars, gif'}
+            'tags': 'barbarella, gif'}
     )
 
     print "sleeping..."

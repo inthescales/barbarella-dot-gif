@@ -40,33 +40,33 @@ while True:
             break
 
     # first pass reduce the amount of colors
-    if(os.path.getsize('star_wars.gif') > 5242880):
+    if(os.path.getsize('barbarella.gif') > 5242880):
         subprocess.call(['convert',
-                         'star_wars.gif',
+                         'barbarella.gif',
                          '-layers',
                          'optimize',
                          '-colors',
                          '128',
                          '-loop',
                          '0',
-                         'star_wars.gif'])
+                         'barbarella.gif'])
 
     # second pass reduce the amount of colors
-    if(os.path.getsize('star_wars.gif') > 5242880):
+    if(os.path.getsize('barbarella.gif') > 5242880):
         subprocess.call(['convert',
-                         'star_wars.gif',
+                         'barbarella.gif',
                          '-layers',
                          'optimize',
                          '-colors',
                          '64',
                          '-loop',
                          '0',
-                         'star_wars.gif'])
+                         'barbarella.gif'])
 
     # other passes reduce the size
-    while(os.path.getsize('star_wars.gif') > 5242880):
+    while(os.path.getsize('barbarella.gif') > 5242880):
         subprocess.call(['convert',
-                         'star_wars.gif',
+                         'barbarella.gif',
                          '-resize',
                          '90%',
                          '-coalesce',
@@ -74,7 +74,7 @@ while True:
                          'optimize',
                          '-loop',
                          '0',
-                         'star_wars.gif'])
+                         'barbarella.gif'])
 
     try:
         response = requests.post(
@@ -82,10 +82,10 @@ while True:
             headers=headers,
             data={
                 'key': API_KEY,
-                'image': b64encode(open('star_wars.gif', 'rb').read()),
+                'image': b64encode(open('barbarella.gif', 'rb').read()),
                 'type': 'base64',
-                'name': 'star_wars.gif',
-                'title': 'Star Wars Dot Gif'
+                'name': 'barbarella.gif',
+                'title': 'Barbarella Dot Gif'
             }
         )
     except (requests.exceptions.ConnectionError, OpenSSL.SSL.SysCallError):
@@ -102,7 +102,7 @@ while True:
     twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
     # upload media
-    gif = open('star_wars.gif', 'rb')
+    gif = open('barbarella.gif', 'rb')
     response = twitter.upload_media(media=gif)
 
     if len(quote) > 70:
@@ -111,7 +111,7 @@ while True:
     if len(quote) == 0:
         quote = "..."
 
-    status = '"' + quote + '" ' + link + ' #starwarsgif'
+    status = '"' + quote + '" ' + link
 
     print "tweeting..."
     try:
