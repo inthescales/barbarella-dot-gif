@@ -1,10 +1,13 @@
-# Star Wars DOT Gif
+# Barbarella DOT Gif
+
+Adaptation of Lindsey Bieda's 'starwars-dot-gif' for the movie Barbarella.
+Original: https://github.com/LindseyB/starwars-dot-gif
 
 ## Quickstart
 
 ### Setup
 
-Copy the contents of ```config.cfg.example``` into ```config.cfg``` and make sure to change the relevant paths for VLC or ffmpeg and the Star Wars episodes. Any format that can be read by VLC or ffmpeg should be acceptable for the movies. Note, if you don't plan on running the twitter bot you only need to fill out the general section of the cfg file.
+Copy the contents of ```config.cfg.example``` into ```config.cfg``` and make sure to change the relevant paths for VLC or ffmpeg and Barbarella. Any format that can be read by VLC or ffmpeg should be acceptable for the movies. Note, if you don't plan on running the twitter bot you only need to fill out the general section of the cfg file.
 
 Install python requirements:
 
@@ -25,10 +28,10 @@ ffmpeg: /usr/bin/ffmpeg /usr/share/ffmpeg /usr/share/man/man1/ffmpeg.1.gz
 
 #### To Run with search UI [(sample run)](http://www.youtube.com/watch?v=n387eBqnw1o)
 
-By default the gif is created as **star_wars.gif**
+By default the gif is created as **barbarella.gif**
 
 ```bash
-python star_wars_gif.py
+python barbarella_gif.py
 ```
 
 #### To get a random gif
@@ -77,7 +80,7 @@ It is assumed you have [virtualenv](https://virtualenv.pypa.io/en/stable/install
 Create a virtalenv and install python requirements:
 
 ```bash
-cd starwars-dot-gif
+cd barbarella-dot-gif
 virtualenv .env
 source .env/bin/activate
 (.env)$ pip install -r requirements.txt
@@ -92,7 +95,7 @@ vim config.cfg
 
 You must set a path for vlc or ffmpeg, if both are set, ffmpeg will be preferred over vlc. Setting 'vlc' or 'ffmpeg' instead of a path is acceptable if those are executable as-is on your system.
 
-The repository currently includes subtitles for Star Wars episode IV to VIII, you are free to add more video-files with corresponding subtitles (see [config.cfg.example](config.cfg.example)). It is recommended that you remove any entires which you do not want to use from the videos-list in the config.
+The repository currently includes English subtitles for Barbarella, you are free to add more video-files with corresponding subtitles (see [config.cfg.example](config.cfg.example)). It is recommended that you remove any entires which you do not want to use from the videos-list in the config.
 
 To test the configuration you may run the script with the ```--help```-option, which will give you an extensive explanation of options.
 
@@ -104,14 +107,14 @@ usage: makeGifs.py [-h] [--movie [MOVIE [MOVIE ...]]] [--index [INDEX]]
 
 ### Detailed Usage
 
-You may use the script with your config.cfg either with an interactive [commandline-tool](star_wars_gif.py) or directly pass options on the commandline.
+You may use the script with your config.cfg either with an interactive [commandline-tool](barbarella_gif.py) or directly pass options on the commandline.
 
 #### Commandline-tool
 
 The commandline-tool has a GUI of sorts and allows you to search in the subtitles. This allows you to look for specific words or quotes you are looking for.
 
 ```bash
-(.env)$ python star_wars_gif.py
+(.env)$ python barbarella_gif.py
 ```
 
 This script will ignore any arguments passed to it.
