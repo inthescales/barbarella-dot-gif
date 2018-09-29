@@ -6,7 +6,7 @@ videos: [
         'title': "Barbarella",
         'movie_path': "/path/to/movie-file",
         'subtitle_path': "subs/barbarella.srt",
-        'slug': 'barbarella',
+	'slug': "barbarella"
     }
 ]
 
