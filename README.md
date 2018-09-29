@@ -1,6 +1,7 @@
 # Barbarella DOT Gif
 
 Adaptation of Lindsey Bieda's 'starwars-dot-gif' for the movie Barbarella.
+
 Original: https://github.com/LindseyB/starwars-dot-gif
 
 ## Quickstart
