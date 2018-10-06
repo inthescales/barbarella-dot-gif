@@ -27,7 +27,6 @@ def menu(title, movies):
         body.append(urwid.AttrMap(button, None, focus_map='reversed'))
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
-
 def item_chosen(button, movie):
     global selected_movie
 
@@ -43,6 +42,9 @@ def item_chosen(button, movie):
 
 # TODO: Add enter as "send" -> QuestionBox in Tutorial
 
+def quick_start(title):
+    body = [urwid.Text(title), urwid.Divider()]
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
 def search(button):
     edit = urwid.Edit("Search quotes: ")
@@ -137,7 +139,13 @@ def exit(button):
     index = None
     raise urwid.ExitMainLoop()
 
-main = urwid.Padding(menu(u'Movie choice', movies), left=2, right=2)
+if len(movies) > 1:
+    main = urwid.Padding(menu(u'Movie choice', movies), left=2, right=2)
+else:
+    selected_movie = movies[0]
+    main = urwid.Padding(quick_start(u''), left=2, right=2)
+    search(u'')
+
 top = urwid.Overlay(main, urwid.SolidFill(
     u'\N{MEDIUM SHADE}'),
     align='center', width=('relative', 60),
