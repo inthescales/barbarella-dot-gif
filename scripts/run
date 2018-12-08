@@ -1,2 +1,2 @@
 cd /var/www/bots/barbarella-dot-gif/
-python3 /var/www/bots/barbarella-dot-gif/twitter_bot.py
+python /var/www/bots/barbarella-dot-gif/twitter_bot.py
