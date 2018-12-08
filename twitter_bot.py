@@ -22,7 +22,9 @@ APP_SECRET = config.get("twitter", "app_secret")
 OAUTH_TOKEN = config.get("twitter", "oauth_token")
 OAUTH_TOKEN_SECRET = config.get("twitter", "oauth_token_secret")
 
-while True:
+repeat = False
+
+while repeat:
     while True:
         try:
             # you can set many more options, check the makeGif-function
@@ -90,10 +92,13 @@ while True:
         twitter.update_status(status=status, media_ids=[response['media_id']])
     except:
         # error with twitter sleep a bit and try again
-        time.sleep(1800)
+        print("twitter error")
+        if repeat:
+            time.sleep(1800)
         continue
 
-    print("sleeping...")
-    # sleep 2 hours
-    time.sleep(7200)
-    #time.sleep(3600)
+    if repeat:
+        print("sleeping...")
+        hours = 2
+        minutes = hours * 60 * 60
+        time.sleep(minutes)

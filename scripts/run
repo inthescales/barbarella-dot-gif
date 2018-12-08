@@ -1,0 +1,2 @@
+cd /var/www/bots/barbarella-dot-gif/
+python3 /var/www/bots/barbarella-dot-gif/barbarella_gif.py
